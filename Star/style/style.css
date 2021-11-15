@@ -1,0 +1,28 @@
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    height: 200px;
+    border: 1px solid black;
+}
+
+.star {
+    margin: 10px;
+    height: 150px;
+    width: 150px;
+    border: 1px solid black;
+}
+
+.star:hover {
+    background-color: gold;
+}
+
+.star:hover ~ .star:nth-child(1),
+.star:hover ~ .star:nth-child(n+1),
+.star:hover ~ .star:nth-child(n+2),
+.star:hover ~ .star:nth-child(n+3),
+.star:hover ~ .star:nth-child(n+4) {
+    background-color: gold;
+}
