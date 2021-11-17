@@ -1,9 +1,9 @@
 .main_block {
     border: 1px solid black;
-    width: 600px;
-    height: 300px;
+    width: 700px;
+    height: 400px;
     display: grid;
-    grid-template-columns: 150px 300px 150px;
+    grid-template-columns: 150px 400px 150px;
 }
 
 .child {
@@ -24,7 +24,11 @@
 }
 
 .third {
-    grid-column: 2/4;
+    display: grid;
+    grid-template-columns: 100px 200px;
+    grid-template-rows: 100px 100px;
 }
 
-
+.fourth {
+    grid-row: 1/3;
+}
