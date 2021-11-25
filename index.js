@@ -17,5 +17,5 @@ const checkNumb = string => {
     return newNumbStr.join('');
 }
 
-const ipAdress = checkNumb('55639217');
-console.log(ipAdress);
+const ipAddress = checkNumb('55639217');
+console.log(ipAddress);
