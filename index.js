@@ -54,10 +54,10 @@ const user = [
         age: 105
     }
 ]
-
 let sum = 0;
+
 for (let i = 0; i < user.length; i++) {
-      sum += user[i].age;
+      sum += user[i].age / user.length;
 }
 console.log(sum);
 
