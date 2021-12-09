@@ -44,6 +44,25 @@
 //Циклов фор найти среднеарифметическое всех возрастов юзеров. Решение продублировать с forEach
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// const user = [
+//     {
+//         name: 'Petya',
+//         age: 100
+//     },
+//     {
+//         name: 'Kolya',
+//         age: 105
+//     }
+// ]
+// let sum = 0;
+
+// for (let i = 0; i < user.length; i++) {
+//       sum += user[i].age / user.length;
+// }
+// console.log(sum);
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
 const user = [
     {
         name: 'Petya',
@@ -53,11 +72,11 @@ const user = [
         name: 'Kolya',
         age: 105
     }
-]
+];
 let sum = 0;
 
-for (let i = 0; i < user.length; i++) {
-      sum += user[i].age / user.length;
-}
-console.log(sum);
+user.forEach( (item) => {
+    sum += item.age / user.length;
+});
 
+console.log(sum);
