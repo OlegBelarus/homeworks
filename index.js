@@ -12,6 +12,21 @@
 
 ///////////////////////////////////////////////////////////////////////
 
+// const array = [50, 60, 1, 9, 17, 3, 21];
+
+// const getFirst = (array, n) => {
+// const newArr = [];
+
+//     array.map( (item, idx) => {
+//       if (idx < n) {
+//         newArr.push(item);
+//       }
+//     });
+
+//     return newArr;
+// };
+
+// console.log(getFirst(array, 4));
 
 
 //2. Напишите функцию getLast(array, n), которая возвращает фрагмент массива,
@@ -28,7 +43,21 @@
 
 ///////////////////////////////////////////////////////////////////////
 
+// const array = [17, 15, 22, 21, 1, 7, 9];
 
+// const getLast = (array, n) => {
+// const newArr = [];
+
+//   array.map( (item, idx) => {
+//     if (idx >= array.length - n ) {
+//       newArr.push(item) + array.slice(Math.max(array.length - n, 0));
+//     }
+//   });
+
+//   return newArr;
+// };
+
+// console.log(getLast(array, 5));
 
 //3.Напишите функцию arrayFilled(len, value), которая возвращает массив с заданным количеством len элементов value.
 
