@@ -1,63 +1,33 @@
-// // number 1
+const randomNumber = Math.floor(Math.random() * 10 + 1);
+let result = 0;
 
-// const users = [
-//     {
-//         name: 'Vasya',
-//         age: 22
-//     },
-//     {
-//         name: 'Marina',
-//         age: 27
-//     }
-// ];
+const butNum = document.querySelector('.butNum');
+const guessField = document.querySelector('.guessField');
 
-// const propertyValue = (x, y) => x.map(item => item[y]);
-
-// console.log(propertyValue(users, 'name'));
+const sumInput = document.querySelector('.sumInput');
+const resultContent = document.querySelector('.resultContent');
+const strHelp = document.querySelector('.strHelp');
 
 
-// // number 2
+const guessNumber = () => {
+    const userNumber = Number(guessField.value); 
+    result++;
 
-// const arr = [1, 9, 10, 8, 9, 22, 9, 96];
+    sumInput.textContent = 'Попыток: ' + result;
 
+      if (userNumber === randomNumber) {
+        resultContent.textContent = 'Красавчик! Угадал! Нажимай F5, играй ещё!';
+      } else {
+        resultContent.textContent = 'Неудачник, пробуй ещё!';
+        if(userNumber < randomNumber) {
+            strHelp.textContent = 'Вы ввели меньше заданного числа';
+        } else if(userNumber > randomNumber) {
+            strHelp.textContent = 'Вы ввели больше заданного числа!';
+        }
+    };
 
-// const removeItem = (arr, num) => {
+      guessField.value = '';
+      guessField.focus();
+};
 
-//     const newArr = arr.filter(item => item !== num);
-
-//     return newArr;
-// };
-
-// console.log(removeItem(arr, 8));
-
-// // number 3
-
-// const arr = ['cherry', 'sun', 'room', 'ok'];
-
-// const newArr = arr.reduce( (acc, item) => {
-//     // const prevVal = acc;
-
-//     // prevVal.push(item.length);
-
-//     return [...acc, item.length];
-// }, []);
-
-//     console.log(newArr);
-
-// number 4
-
-// const numbers = [2, 3, 5, 7, 11, 13, 17, 19];
-
-// const currentSums = array => {
-
-//     return array.reduce( (acc, item, idx) => {
-
-//         if (idx === 0) {
-//             return [item];
-//         }
-
-//         return [...acc, item + acc[idx - 1]];
-//     }, []);
-// };
-
-// console.log(currentSums(numbers));
+butNum.addEventListener('click', guessNumber);
