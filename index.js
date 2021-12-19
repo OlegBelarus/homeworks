@@ -17,6 +17,7 @@ const guessNumber = () => {
 
       if (userNumber === randomNumber) {
         resultContent.textContent = 'Красавчик! Угадал! Нажимай F5, играй ещё!';
+        strHelp.textContent = '';
       } else {
         resultContent.textContent = 'Неудачник, пробуй ещё!';
         if(userNumber < randomNumber) {
