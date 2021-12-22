@@ -24,8 +24,8 @@ users.forEach(({name, age}) => {
   p.innerText = `Name ${name}, age ${age}`;
 
   p.onclick = () => {
-    p.remove()
-  }
+    p.remove();
+  };
 
   body.appendChild(p);
 });
