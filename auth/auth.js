@@ -8,12 +8,7 @@ btn_auth.onclick = () => {
         lastName: inp_last.value
     };
 
-    inp_first.value = '';
-    inp_last.value = '';
-    inp_first.focus();
-    inp_first.focus();
+localStorage.setItem('users', JSON.stringify(users));
 
-    localStorage.setItem('users', JSON.stringify(users));
-
-  window.location = '/home/home.html';
+window.location = '/home/home.html';
 };
