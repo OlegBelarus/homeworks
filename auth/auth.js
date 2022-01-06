@@ -1,14 +1,20 @@
 const btn_auth = document.getElementById('btn_auth');
-const inp_first= document.getElementById('inp_first');
-const inp_last = document.getElementById('inp_last');
+const inp_log= document.getElementById('inp_log');
+const inp_pass = document.getElementById('inp_pass');
+const users = [
+    {
+        login: 'login01',
+        password: '123'
+    },
+    {
+        login: 'login02',
+        password: '123'
+    },
+  ];
+
 
 btn_auth.onclick = () => {
-    const users = {
-        firstName: inp_first.value,
-        lastName: inp_last.value
-    };
-
-localStorage.setItem('users', JSON.stringify(users));
-
-window.location = '/home/home.html';
+     users.find(({login, password}) => login === inp_log.value && password === inp_pass.value) ?
+    window.location = '/home/home.html':
+    alert ('Please re-enter your login or password!');
 };
