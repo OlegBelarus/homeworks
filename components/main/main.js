@@ -23,7 +23,7 @@ const renderTodos = todos => {
     todos_container.append(todo_container);
 
     delTodo.onclick = () => {
-      todos = todos.filter((todo) => todo !== element);
+      todos.filter((todo) => todo !== element);
       localStorage.setItem('todos', JSON.stringify(todos));
       todo_container.remove();
     };
@@ -32,9 +32,11 @@ const renderTodos = todos => {
 };
 
 const initApplication = () => {
-  const existingTodos = localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : [];
+  if (!localStorage.getItem('todos')) {
+    localStorage.setItem('todos', JSON.stringify([]));
+  }
 
-  renderTodos(existingTodos);
+  renderTodos(JSON.parse(localStorage.getItem('todos')));
 };
 
 submit_todo_btn.onclick = () => {
@@ -43,15 +45,16 @@ submit_todo_btn.onclick = () => {
     description: todo_description_text_area.value
   };
 
+  const existingTodos = JSON.parse(localStorage.getItem('todos')) || [];
+  let newTodo;
+
+  existingTodos.push(todo);
+  localStorage.setItem('todos', JSON.stringify(existingTodos));
+  newTodo = existingTodos.slice(existingTodos.length - 1, existingTodos.length);
+  renderTodos(newTodo);
+
   todo_title_input.value = '';
   todo_description_text_area.value = '';
-
-  const updatedTodos = [
-    ...JSON.parse(localStorage.getItem('todos')) || [], todo
-  ];
-
-  localStorage.setItem('todos', JSON.stringify(updatedTodos));
-  renderTodos(localStorage.setItem('todos', JSON.stringify(updatedTodos)) );
 
 };
 
