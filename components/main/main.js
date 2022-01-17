@@ -65,7 +65,7 @@ const getInputs = () => {
 
 todo_title_input.oninput = () => {
   getInputs();
-}
+};
 
 todo_description_text_area.oninput = () => {
   getInputs();
